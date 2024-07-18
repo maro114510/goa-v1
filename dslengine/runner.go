@@ -396,7 +396,7 @@ func SortRoots() ([]Root, error) {
 	return sorted, nil
 }
 
-// sortDependencies sorts the depencies of the given root in the given slice.
+// sortDependencies sorts the dependencies of the given root in the given slice.
 func sortDependencies(root Root, depFunc func(Root) []Root) []Root {
 	seen := make(map[string]bool, len(roots))
 	var sorted []Root
@@ -404,7 +404,7 @@ func sortDependencies(root Root, depFunc func(Root) []Root) []Root {
 	return sorted
 }
 
-// sortDependenciesR sorts the depencies of the given root in the given slice.
+// sortDependenciesR sorts the dependencies of the given root in the given slice.
 func sortDependenciesR(root Root, seen map[string]bool, sorted *[]Root, depFunc func(Root) []Root) {
 	for _, dep := range depFunc(root) {
 		if !seen[dep.DSLName()] {

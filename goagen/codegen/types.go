@@ -53,7 +53,8 @@ func init() {
 // line is never indented.
 // jsonTags controls whether to produce json tags.
 // private controls whether the field is a pointer or not. All fields in the struct are
-//   pointers for a private struct.
+//
+//	pointers for a private struct.
 func GoTypeDef(ds design.DataStructure, tabs int, jsonTags, private bool) string {
 	def := ds.Definition()
 	if tname, ok := def.Metadata["struct:field:type"]; ok {
@@ -541,9 +542,9 @@ func GoTypeTransform(source, target *design.UserTypeDefinition, targetPkg, funcN
 	return RunTemplate(transformT, data), nil
 }
 
-// GoTypeTransformName generates a valid Go identifer that is adequate for naming the type
+// GoTypeTransformName generates a valid Go identifier that is adequate for naming the type
 // transform function that creates an instance of the data structure described by target from an
-// instance of the data strucuture described by source.
+// instance of the data structure described by source.
 func GoTypeTransformName(source, target *design.UserTypeDefinition, suffix string) string {
 	return fmt.Sprintf("%sTo%s%s", Goify(source.TypeName, true), Goify(target.TypeName, true), Goify(suffix, true))
 }
@@ -561,7 +562,7 @@ func Tempvar() string {
 	return fmt.Sprintf("tmp%d", TempCount)
 }
 
-// RunTemplate executs the given template with the given input and returns
+// RunTemplate executes the given template with the given input and returns
 // the rendered string.
 func RunTemplate(tmpl *template.Template, data interface{}) string {
 	var b bytes.Buffer

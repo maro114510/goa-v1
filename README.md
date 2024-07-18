@@ -148,7 +148,7 @@ This produces the following outputs:
   the API with the given arguments and returns the `http.Response`.
 * a `tool` directory that contains the complete source for a client CLI tool.
 * a `swagger` package with implements the `GET /swagger.json` API endpoint. The response contains
-  the full Swagger specificiation of the API.
+  the full Swagger specification of the API.
 
 ### 3. Run
 

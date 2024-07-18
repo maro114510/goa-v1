@@ -421,7 +421,7 @@ func (o Object) ToHash() *Hash { return nil }
 // CanHaveDefault returns false.
 func (o Object) CanHaveDefault() bool { return false }
 
-// Merge copies other's attributes into o overridding any pre-existing attribute with the same name.
+// Merge copies other's attributes into o overriding any pre-existing attribute with the same name.
 func (o Object) Merge(other Object) {
 	for n, att := range other {
 		o[n] = DupAtt(att)
